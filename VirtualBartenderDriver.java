@@ -3,8 +3,9 @@
  */
 
 /**
- * @author Tarr
- *
+ * @author Greg Tarr
+ *This is the Tester file for the cocktail recipe
+ *final project.
  */
 public class VirtualBartenderDriver {
 
