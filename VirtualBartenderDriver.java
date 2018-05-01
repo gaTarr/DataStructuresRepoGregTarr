@@ -4,8 +4,8 @@
 
 /**
  * @author Greg Tarr
- *This is the Tester file for the cocktail recipe
- *final project. II
+ *This is the Driver for the cocktail recipe
+ *final project.
  */
 public class VirtualBartenderDriver {
 
@@ -14,7 +14,11 @@ public class VirtualBartenderDriver {
 	 */
 	public static void main(String[] args) {
 		
-		//Create Spirits  **eventually to store in .txt file
+		CocktailCreator2 appFrame = new CocktailCreator2();
+		appFrame.start();
+		
+		/*
+		//Create Spirits  **eventually to store in .txt file..??
 		Spirits Bitters = new Spirits("Bitters");
 		Spirits Bourbon = new Spirits("Bourbon");
 		Spirits CoconutRum = new Spirits("Coconut Rum");
@@ -27,39 +31,96 @@ public class VirtualBartenderDriver {
 		Spirits SimpleSyrup = new Spirits("Simple Syrup");
 		Spirits SourMix = new Spirits("Sour Mix");
 		Spirits SpicedRum = new Spirits("Spiced Rum");
+		Spirits SweetVermouth = new Spirits("Sweet Vermouth");
 		Spirits Tequila = new Spirits("Tequila");
 		Spirits Vodka = new Spirits("Vodka");
 		
 		//Add to liquor cabinet and test methods
-		liquorCabinet myBooze = new liquorCabinet();
-		myBooze.add(OrangeJuice);
-		myBooze.add(Bitters);
-		myBooze.add(Bourbon);
-		myBooze.add(SpicedRum);
-		myBooze.add(Coke);
+		liquorCabinet myCabinet = new liquorCabinet();
+		myCabinet.add(OrangeJuice);
+		myCabinet.add(Bitters);
+		myCabinet.add(Bourbon);
+		myCabinet.add(SpicedRum);
+		myCabinet.add(Coke);
 		
-		myBooze.search(SpicedRum);
-		myBooze.search(Bourbon);
-		myBooze.search(Bitters);
-		myBooze.search(OrangeJuice);
-		myBooze.search(Coke);
-		myBooze.search(IrishWhiskey);
-		myBooze.delete(Coke);
-		myBooze.search(Coke);
+		myCabinet.search(SpicedRum);
+		myCabinet.search(Bourbon);
+		myCabinet.search(Bitters);
+		myCabinet.search(OrangeJuice);
+		myCabinet.search(Coke);
+		myCabinet.search(IrishWhiskey);
+		myCabinet.delete(Coke);
+		myCabinet.search(Coke);
+		
+		myCabinet.add(Vodka);
+		myCabinet.add(SimpleSyrup);
+		myCabinet.add(Bitters);
+		myCabinet.add(ScotchWhiskey);
+		myCabinet.add(SweetVermouth);
+		
+		System.out.println("********************************************************************");
+		
+		//Create Recipes and test
+		CocktailRecipe Screwdriver = new CocktailRecipe("Screwdriver");				
+		Screwdriver.addIngredients(Vodka);
+		Screwdriver.addIngredients(OrangeJuice);		
+		Screwdriver.displayRecipe();
+		
+		CocktailRecipe RumAndCoke = new CocktailRecipe("Rum and Coke");
+		RumAndCoke.addIngredients(SpicedRum);
+		RumAndCoke.addIngredients(Coke);
+		RumAndCoke.addIngredients(Tequila);
+		RumAndCoke.removeIngredients(Tequila);
+		RumAndCoke.displayRecipe();
+		
+		CocktailRecipe OldFashioned = new CocktailRecipe("Old Fashioned");
+		OldFashioned.addIngredients(Bourbon);
+		OldFashioned.addIngredients(SimpleSyrup);
+		OldFashioned.addIngredients(Bitters);
+		OldFashioned.displayRecipe();
+		
+		CocktailRecipe RobRoy = new CocktailRecipe("Rob Roy");
+		RobRoy.addIngredients(ScotchWhiskey);
+		RobRoy.addIngredients(SweetVermouth);
+		RobRoy.addIngredients(Bitters);
+		RobRoy.displayRecipe();
+		
 		
 		
 		System.out.println("********************************************************************");
+		
+		//Test Recipe Index
+		recipeIndex DrinkMenu = new recipeIndex(Screwdriver);
+		DrinkMenu.addRecipe(RumAndCoke);
+		DrinkMenu.addRecipe(OldFashioned);
+		DrinkMenu.addRecipe(RobRoy);
+		
 
+		System.out.println("********************************************************************");
 		
 		
-		//Create Recipes and test
-		CocktailRecipe Screwdriver = new CocktailRecipe("Screwdriver");
+		DrinkMenu.displayAllRecipes();
+		System.out.println();
+		DrinkMenu.searchRecipeIndex(myCabinet);
+		System.out.println();
+		System.out.println(DrinkMenu.recipesAvailable());
+		
+		System.out.println("********************************************************************");
+		
+		*/
 		
 		
-		Screwdriver.addIngredients(Vodka);
-		Screwdriver.addIngredients(OrangeJuice);
 		
-		Screwdriver.displayRecipe();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	}
 
