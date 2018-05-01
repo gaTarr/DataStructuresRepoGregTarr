@@ -7,9 +7,8 @@ import java.util.ArrayList;
 /**
  * @author Greg Tarr
  * This recipeIndex will hold a list of various recipes
- * that will search the spirits to see which recipes
- * a user can make with the spirits in their cabinet
- *
+ * that can be made based upon spirits in the liquor cabinet 
+ * class. 
  */
 public class recipeIndex {
 	
@@ -51,14 +50,38 @@ public class recipeIndex {
 	
 	/**
 	 * method to search through recipes and determine if they hold the 
-	 * required ingredients to make them
-	 * 
-	 * **probably needs to return boolean value.
+	 * required ingredients to make them.
 	 */
-	public void searchRecipeIndex() {
-		for (CocktailRecipe recipe : recipeList) { //for each recipe in the the index
-			recipe.checkIngredients();			   //check to see if all ingredients are in the 
-		}										   //liquor cabinet.						
+	public void searchRecipeIndex(liquorCabinet aCabinet) {
+		for (CocktailRecipe recipe : recipeList) { 	
+			recipe.checkIngredients(aCabinet);	   	 
+		}										   							
+	}
+	
+	/**
+	 * This method returns all available recipes that
+	 * can be made with the spirits in the liquor cabinet
+	 */
+	public String recipesAvailable() {
+		String displayStrings = "";
+		System.out.println("These are the recipes you can make: ");
+		for (CocktailRecipe recipe : recipeList) {
+			if(recipe.getHasAllIngredients()) {
+				displayStrings += recipe.displayRecipe() + "\n";
+			}
+		} return displayStrings;
+	}
+	
+	/**
+	 * This method displays any recipe that exists, 
+	 * not necessarily ones that a user has supplies 
+	 * to make.
+	 */
+	public void displayAllRecipes() {
+		System.out.println("All Possible Recipes: ");
+		for (CocktailRecipe recipe : recipeList) {
+			recipe.displayRecipe();			
+		}
 	}
 	
 	

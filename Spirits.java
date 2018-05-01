@@ -43,6 +43,4 @@ public class Spirits {
 		this.name = name;
 	}
 	
-	
-
 }
